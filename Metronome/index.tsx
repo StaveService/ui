@@ -1,6 +1,6 @@
-import React from "react";
-import ToggleButton from "@material-ui/lab/ToggleButton";
-import { GiMetronome } from "react-icons/gi";
+import React from 'react';
+import ToggleButton from '@material-ui/lab/ToggleButton';
+import { GiMetronome } from 'react-icons/gi';
 
 interface MetronomeProps {
   className?: string;
@@ -24,7 +24,7 @@ const Metronome: React.FC<MetronomeProps> = ({
   );
 };
 Metronome.defaultProps = {
-  className: "",
+  className: '',
   selected: false,
   onClick: undefined,
 };

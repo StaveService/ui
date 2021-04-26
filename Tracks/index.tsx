@@ -1,10 +1,10 @@
-import React from "react";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import SvgIcon, { SvgIconProps } from "@material-ui/core/SvgIcon";
-import { FaGuitar } from "react-icons/fa";
+import React from 'react';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import SvgIcon, { SvgIconProps } from '@material-ui/core/SvgIcon';
+import { FaGuitar } from 'react-icons/fa';
 
 const GuitarIcon = ({ color }: SvgIconProps) => {
   return (
@@ -41,7 +41,7 @@ const Tracks: React.FC<TracksProps> = ({
         onClick={handleListItemClick}
       >
         <ListItemIcon>
-          <GuitarIcon color={selected ? "primary" : "inherit"} />
+          <GuitarIcon color={selected ? 'primary' : 'inherit'} />
         </ListItemIcon>
         <ListItemText primary={track.name} />
       </ListItem>
