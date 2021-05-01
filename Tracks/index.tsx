@@ -5,6 +5,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import SvgIcon, { SvgIconProps } from '@material-ui/core/SvgIcon';
 import { FaGuitar } from 'react-icons/fa';
+import Paper from '@material-ui/core/Paper';
 
 const GuitarIcon = ({ color }: SvgIconProps) => {
   return (
@@ -47,7 +48,7 @@ const Tracks: React.FC<TracksProps> = ({
       </ListItem>
     );
   });
-  return <List className="at-track-list">{trackItems}</List>;
+  return <List className="at-track-list" component={Paper}>{trackItems}</List>;
 };
 Tracks.defaultProps = {
   tracks: [],
