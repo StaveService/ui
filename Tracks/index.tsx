@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,MouseEvent } from 'react';
 import { FaGuitar } from 'react-icons/fa';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -38,11 +38,13 @@ const Tracks: React.FC<TracksProps> = ({
     const handleListItemClick = () => {
       if (onListItemClick) onListItemClick(track, i);
     };
-    const handleMute = () => {
+    const handleMute = (e: MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation()
       if (onMute) onMute(mute, track);
       setMute(!mute);
     };
-    const handleSolo = () => {
+    const handleSolo = (e: MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation()
       if (onSolo) onSolo(solo, track);
       setSolo(!solo);
     };
