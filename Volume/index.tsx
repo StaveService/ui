@@ -8,10 +8,12 @@ import VolumeOffIcon from '@material-ui/icons/VolumeOff';
 import { Box } from '@material-ui/core';
 
 interface VolumeIconProps {
+  color: string;
   value?: number;
   muted?: boolean;
 }
 const VolumeIcon: React.FC<VolumeIconProps> = ({
+  color,
   value,
   muted,
 }: VolumeIconProps) => {
@@ -54,8 +56,10 @@ const Volume: React.FC<VolumeProps> = ({
       onChange={handleMute}
     >
       <Box width={200} display="flex" alignItems="center">
-        <VolumeIcon value={volume} muted={muted} />
+        <VolumeIcon
+         value={volume} muted={muted} color="twitter"/>
         <Slider
+          className={className}
           disabled={muted}
           value={volume}
           onClick={handleClickValue}
