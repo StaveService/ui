@@ -56,8 +56,7 @@ const Volume: React.FC<VolumeProps> = ({
       onChange={handleMute}
     >
       <Box width={200} display="flex" alignItems="center">
-        <VolumeIcon
-         value={volume} muted={muted} color="twitter"/>
+        <VolumeIcon value={volume} muted={muted} color="twitter" />
         <Slider
           className={className}
           disabled={muted}

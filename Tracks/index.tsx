@@ -1,4 +1,4 @@
-import React, { useState,MouseEvent } from 'react';
+import React, { useState, MouseEvent } from 'react';
 import { FaGuitar } from 'react-icons/fa';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -39,12 +39,12 @@ const Tracks: React.FC<TracksProps> = ({
       if (onListItemClick) onListItemClick(track, i);
     };
     const handleMute = (e: MouseEvent<HTMLButtonElement>) => {
-      e.stopPropagation()
+      e.stopPropagation();
       if (onMute) onMute(mute, track);
       setMute(!mute);
     };
     const handleSolo = (e: MouseEvent<HTMLButtonElement>) => {
-      e.stopPropagation()
+      e.stopPropagation();
       if (onSolo) onSolo(solo, track);
       setSolo(!solo);
     };
@@ -57,7 +57,7 @@ const Tracks: React.FC<TracksProps> = ({
         onClick={handleListItemClick}
       >
         <ListItemIcon>
-          <GuitarIcon color={selected ? "primary" : "inherit"} />
+          <GuitarIcon color={selected ? 'primary' : 'inherit'} />
         </ListItemIcon>
         <ListItemText
           primary={track.name}
