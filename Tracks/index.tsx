@@ -87,20 +87,19 @@ const Tracks: React.FC<TracksProps> = ({
   onSolo,
   onMute,
 }: TracksProps) => (
-  <>
+  <List className="at-track-list" component={Paper}>
     {tracks?.map((track, i) => (
-      <List key={track.index} className="at-track-list" component={Paper}>
-        <Track
-          track={track}
-          selectedIndex={selectedIndex}
-          i={i}
-          onListItemClick={onListItemClick}
-          onSolo={onSolo}
-          onMute={onMute}
-        />
-      </List>
+      <Track
+        key={track.index}
+        track={track}
+        selectedIndex={selectedIndex}
+        i={i}
+        onListItemClick={onListItemClick}
+        onSolo={onSolo}
+        onMute={onMute}
+      />
     ))}
-  </>
+  </List>
 );
 Tracks.defaultProps = {
   tracks: [],
