@@ -1,6 +1,6 @@
-import React from 'react';
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import TimerIcon from '@material-ui/icons/Timer';
+import React from "react";
+import ToggleButton from "@material-ui/lab/ToggleButton";
+import TimerIcon from "@material-ui/icons/Timer";
 
 interface CountInProps {
   className?: string;
@@ -24,7 +24,7 @@ const CountIn: React.FC<CountInProps> = ({
   );
 };
 CountIn.defaultProps = {
-  className: '',
+  className: "",
   selected: false,
   onClick: undefined,
 };

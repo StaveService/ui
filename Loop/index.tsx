@@ -1,6 +1,6 @@
-import React from 'react';
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import RepeatIcon from '@material-ui/icons/Repeat';
+import React from "react";
+import ToggleButton from "@material-ui/lab/ToggleButton";
+import RepeatIcon from "@material-ui/icons/Repeat";
 
 interface LoopProps {
   className?: string;
@@ -24,7 +24,7 @@ const Loop: React.FC<LoopProps> = ({
   );
 };
 Loop.defaultProps = {
-  className: '',
+  className: "",
   selected: false,
   onClick: undefined,
 };

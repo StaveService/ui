@@ -1,6 +1,6 @@
-import React from 'react';
-import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
-import ToggleButton from '@material-ui/lab/ToggleButton';
+import React from "react";
+import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
+import ToggleButton from "@material-ui/lab/ToggleButton";
 
 interface StopProps {
   className?: string;
@@ -28,7 +28,7 @@ const Stop: React.FC<StopProps> = ({
   );
 };
 Stop.defaultProps = {
-  className: '',
+  className: "",
   disabled: false,
   onStop: undefined,
 };

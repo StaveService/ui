@@ -1,7 +1,7 @@
-import React from 'react';
-import PauseIcon from '@material-ui/icons/Pause';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import ToggleButton from '@material-ui/lab/ToggleButton';
+import React from "react";
+import PauseIcon from "@material-ui/icons/Pause";
+import PlayArrowIcon from "@material-ui/icons/PlayArrow";
+import ToggleButton from "@material-ui/lab/ToggleButton";
 
 interface PlayProps {
   className?: string;
@@ -31,7 +31,7 @@ const Play: React.FC<PlayProps> = ({
   );
 };
 Play.defaultProps = {
-  className: '',
+  className: "",
   paused: true,
   disabled: false,
   onPause: undefined,

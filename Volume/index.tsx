@@ -1,11 +1,11 @@
-import React, { ChangeEvent, MouseEvent } from 'react';
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import Slider from '@material-ui/core/Slider';
-import VolumeUpIcon from '@material-ui/icons/VolumeUp';
-import VolumeDownIcon from '@material-ui/icons/VolumeDown';
-import VolumeMuteIcon from '@material-ui/icons/VolumeMute';
-import VolumeOffIcon from '@material-ui/icons/VolumeOff';
-import { Box } from '@material-ui/core';
+import React, { ChangeEvent, MouseEvent } from "react";
+import ToggleButton from "@material-ui/lab/ToggleButton";
+import Slider from "@material-ui/core/Slider";
+import VolumeUpIcon from "@material-ui/icons/VolumeUp";
+import VolumeDownIcon from "@material-ui/icons/VolumeDown";
+import VolumeMuteIcon from "@material-ui/icons/VolumeMute";
+import VolumeOffIcon from "@material-ui/icons/VolumeOff";
+import { Box } from "@material-ui/core";
 
 interface VolumeIconProps {
   color: string;
@@ -17,6 +17,8 @@ const VolumeIcon: React.FC<VolumeIconProps> = ({
   value,
   muted,
 }: VolumeIconProps) => {
+  // eslint-disable-next-line no-console
+  console.log(color);
   if (muted || !value) return <VolumeOffIcon />;
   if (value >= 0.6) return <VolumeUpIcon />;
   if (value >= 0.3) return <VolumeDownIcon />;
@@ -69,7 +71,7 @@ const Volume: React.FC<VolumeProps> = ({
   );
 };
 Volume.defaultProps = {
-  className: '',
+  className: "",
   muted: false,
   onVolume: undefined,
   onMute: undefined,
