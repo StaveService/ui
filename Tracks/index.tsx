@@ -8,20 +8,17 @@ import SvgIcon, { SvgIconProps } from "@material-ui/core/SvgIcon";
 import Paper from "@material-ui/core/Paper";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
+import { model } from "@coderline/alphatab";
 
 const GuitarIcon = ({ color }: SvgIconProps) => (
   <SvgIcon color={color}>
     <FaGuitar />
   </SvgIcon>
 );
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-export interface ITrack {
-  name: string;
-  index: string;
-}
+export const ITrack = new model.Track();
+
 interface TrackProps extends Omit<TracksProps, "tracks"> {
-  track: ITrack;
+  track: typeof ITrack;
   i: number;
 }
 const Track: React.FC<TrackProps> = ({
@@ -77,11 +74,11 @@ const Track: React.FC<TrackProps> = ({
   );
 };
 interface TracksProps {
-  tracks?: ITrack[];
+  tracks?: typeof ITrack[];
   selectedIndex?: number;
-  onListItemClick?: (track: ITrack, index: number) => void;
-  onSolo?: (solo: boolean, soloTracks: ITrack) => void;
-  onMute?: (mute: boolean, mutedTracks: ITrack) => void;
+  onListItemClick?: (track: typeof ITrack, index: number) => void;
+  onSolo?: (solo: boolean, soloTracks: typeof ITrack) => void;
+  onMute?: (mute: boolean, mutedTracks: typeof ITrack) => void;
 }
 const Tracks: React.FC<TracksProps> = ({
   tracks,
