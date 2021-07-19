@@ -8,7 +8,7 @@ import { useSnackbar } from "notistack";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import ControlTextField from "../../components/ControlTextField/ControlTextField";
-import LoadingButton from "../../components/Loading/LoadingButton";
+import LoadingButton from "../LoadingButton";
 import {
   ISignErrorResponse,
   ISignInFormValues,
