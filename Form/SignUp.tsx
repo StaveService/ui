@@ -78,96 +78,94 @@ const SignUp: React.FC<SignUpProps> = ({ onSuccess }: SignUpProps) => {
   );
   const onSubmit = (data: ISignUpFormValues) => mutate(data);
   return (
-    <DefaultLayout>
-      <Box m={3}>
-        <Typography variant="h4" align="center">
-          SignUp
-        </Typography>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <ControlTextField
-            name="nickname"
-            defaultValue=""
-            label="NickName"
-            variant="outlined"
-            margin="normal"
-            control={control}
-            errors={errors}
-            disabled={isLoading}
-            fullWidth
-          />
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              <ControlTextField
-                name="familyname"
-                defaultValue=""
-                label="FamilyName"
-                variant="outlined"
-                control={control}
-                errors={errors}
-                disabled={isLoading}
-                fullWidth
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <ControlTextField
-                name="givenname"
-                defaultValue=""
-                label="GivenName"
-                variant="outlined"
-                control={control}
-                errors={errors}
-                disabled={isLoading}
-                fullWidth
-              />
-            </Grid>
+    <Box m={3}>
+      <Typography variant="h4" align="center">
+        SignUp
+      </Typography>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <ControlTextField
+          name="nickname"
+          defaultValue=""
+          label="NickName"
+          variant="outlined"
+          margin="normal"
+          control={control}
+          errors={errors}
+          disabled={isLoading}
+          fullWidth
+        />
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <ControlTextField
+              name="familyname"
+              defaultValue=""
+              label="FamilyName"
+              variant="outlined"
+              control={control}
+              errors={errors}
+              disabled={isLoading}
+              fullWidth
+            />
           </Grid>
-          <ControlTextField
-            type="email"
-            name="email"
-            defaultValue=""
-            label="Email"
-            variant="outlined"
-            margin="normal"
-            control={control}
-            errors={errors}
-            disabled={isLoading}
-            fullWidth
-          />
-          <ControlTextField
-            type="password"
-            name="password"
-            defaultValue=""
-            label="Password"
-            variant="outlined"
-            margin="normal"
-            control={control}
-            errors={errors}
-            disabled={isLoading}
-            fullWidth
-          />
-          <ControlTextField
-            type="password"
-            name="password_confirmation"
-            defaultValue=""
-            label="PasswordConfirmation"
-            variant="outlined"
-            margin="normal"
-            control={control}
-            errors={errors}
-            disabled={isLoading}
-            fullWidth
-          />
-          <LoadingButton
-            type="submit"
-            loading={isLoading}
-            color="primary"
-            fullWidth
-          >
-            SignUp
-          </LoadingButton>
-        </form>
-      </Box>
-    </DefaultLayout>
+          <Grid item xs={6}>
+            <ControlTextField
+              name="givenname"
+              defaultValue=""
+              label="GivenName"
+              variant="outlined"
+              control={control}
+              errors={errors}
+              disabled={isLoading}
+              fullWidth
+            />
+          </Grid>
+        </Grid>
+        <ControlTextField
+          type="email"
+          name="email"
+          defaultValue=""
+          label="Email"
+          variant="outlined"
+          margin="normal"
+          control={control}
+          errors={errors}
+          disabled={isLoading}
+          fullWidth
+        />
+        <ControlTextField
+          type="password"
+          name="password"
+          defaultValue=""
+          label="Password"
+          variant="outlined"
+          margin="normal"
+          control={control}
+          errors={errors}
+          disabled={isLoading}
+          fullWidth
+        />
+        <ControlTextField
+          type="password"
+          name="password_confirmation"
+          defaultValue=""
+          label="PasswordConfirmation"
+          variant="outlined"
+          margin="normal"
+          control={control}
+          errors={errors}
+          disabled={isLoading}
+          fullWidth
+        />
+        <LoadingButton
+          type="submit"
+          loading={isLoading}
+          color="primary"
+          fullWidth
+        >
+          SignUp
+        </LoadingButton>
+      </form>
+    </Box>
   );
 };
 
