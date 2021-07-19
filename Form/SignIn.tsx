@@ -14,7 +14,7 @@ import {
   ISignInFormValues,
   ISignSuccessResponse,
 } from "./interfaces";
-import { signInSchema } from "../../schema";
+import { signInSchema } from "./schema";
 import {
   setHeaders,
   setCurrentUser,

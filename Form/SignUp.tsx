@@ -16,7 +16,7 @@ import {
   ISignSuccessResponse,
   ISignUpFormValues,
 } from "./interfaces";
-import { signUpSchema } from "../../schema";
+import { signUpSchema } from "./schema";
 import {
   setHeaders,
   setCurrentUser,
