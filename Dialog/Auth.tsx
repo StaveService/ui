@@ -8,7 +8,7 @@ import TabContext from "@material-ui/lab/TabContext";
 import { useDispatch, useSelector } from "react-redux";
 import SignInForm from "../Form/SignIn";
 import SignUpForm from "../Form/SignUp";
-import { close, selectOpened } from "../../slices/authModal";
+import { close, selectOpened } from "./authModal";
 
 const Auth: React.FC = () => {
   const dispatch = useDispatch();
