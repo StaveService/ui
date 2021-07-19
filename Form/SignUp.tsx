@@ -24,6 +24,11 @@ import {
 interface SignUpProps {
   onSuccess: () => void;
 }
+declare module "axios" {
+  export interface AxiosRequestConfig {
+    "Key-inflection"?: string;
+  }
+}
 export const signUp = (
   data: ISignUpFormValues
 ): Promise<AxiosResponse<ISignSuccessResponse>> =>
