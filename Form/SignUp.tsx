@@ -10,7 +10,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Grid from "@material-ui/core/Grid";
 import ControlTextField from "../../components/ControlTextField/ControlTextField";
 import LoadingButton from "../LoadingButton";
-import DefaultLayout from "../../layout/Default";
 import {
   ISignErrorResponse,
   ISignSuccessResponse,
