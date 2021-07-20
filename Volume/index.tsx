@@ -8,17 +8,14 @@ import VolumeOffIcon from "@material-ui/icons/VolumeOff";
 import { Box } from "@material-ui/core";
 
 interface VolumeIconProps {
-  color: string;
   value?: number;
   muted?: boolean;
 }
 const VolumeIcon: React.FC<VolumeIconProps> = ({
-  color,
   value,
   muted,
 }: VolumeIconProps) => {
   // eslint-disable-next-line no-console
-  console.log(color);
   if (muted || !value) return <VolumeOffIcon />;
   if (value >= 0.6) return <VolumeUpIcon />;
   if (value >= 0.3) return <VolumeDownIcon />;
@@ -58,7 +55,7 @@ const Volume: React.FC<VolumeProps> = ({
       onChange={handleMute}
     >
       <Box width={200} display="flex" alignItems="center">
-        <VolumeIcon value={volume} muted={muted} color="twitter" />
+        <VolumeIcon value={volume} muted={muted} />
         <Slider
           className={className}
           disabled={muted}
