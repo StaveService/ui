@@ -1,5 +1,6 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import React from "react";
+import { FormattedMessage, useIntl } from "react-intl";
 import { useMutation } from "react-query";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
@@ -38,13 +39,14 @@ export const signUp = (
 const SignUp: React.FC<SignUpProps> = ({ onSuccess }: SignUpProps) => {
   const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
+  const intl = useIntl();
   const { errors, control, handleSubmit } = useForm({
     resolver: yupResolver(signUpSchema),
   });
   const handleSuccess = (res: AxiosResponse<ISignSuccessResponse>) => {
     dispatch(setCurrentUser(res.data.data));
     dispatch(setHeaders(res.headers));
-    enqueueSnackbar("SignUp successful", {
+    enqueueSnackbar(intl.formatMessage({ id: "signupSuccessful" }), {
       variant: "success",
       anchorOrigin: {
         vertical: "bottom",
@@ -84,13 +86,13 @@ const SignUp: React.FC<SignUpProps> = ({ onSuccess }: SignUpProps) => {
   return (
     <Box m={3}>
       <Typography variant="h4" align="center">
-        SignUp
+        <FormattedMessage id="signup" />
       </Typography>
       <form onSubmit={handleSubmit(onSubmit)}>
         <ControlTextField
           name="nickname"
           defaultValue=""
-          label="NickName"
+          label={intl.formatMessage({ id: "nickname" })}
           variant="outlined"
           margin="normal"
           control={control}
@@ -103,7 +105,7 @@ const SignUp: React.FC<SignUpProps> = ({ onSuccess }: SignUpProps) => {
             <ControlTextField
               name="familyname"
               defaultValue=""
-              label="FamilyName"
+              label={intl.formatMessage({ id: "familyname" })}
               variant="outlined"
               control={control}
               errors={errors}
@@ -115,7 +117,7 @@ const SignUp: React.FC<SignUpProps> = ({ onSuccess }: SignUpProps) => {
             <ControlTextField
               name="givenname"
               defaultValue=""
-              label="GivenName"
+              label={intl.formatMessage({ id: "givenname" })}
               variant="outlined"
               control={control}
               errors={errors}
@@ -128,7 +130,7 @@ const SignUp: React.FC<SignUpProps> = ({ onSuccess }: SignUpProps) => {
           type="email"
           name="email"
           defaultValue=""
-          label="Email"
+          label={intl.formatMessage({ id: "email" })}
           variant="outlined"
           margin="normal"
           control={control}
@@ -140,7 +142,7 @@ const SignUp: React.FC<SignUpProps> = ({ onSuccess }: SignUpProps) => {
           type="password"
           name="password"
           defaultValue=""
-          label="Password"
+          label={intl.formatMessage({ id: "password" })}
           variant="outlined"
           margin="normal"
           control={control}
@@ -152,7 +154,7 @@ const SignUp: React.FC<SignUpProps> = ({ onSuccess }: SignUpProps) => {
           type="password"
           name="password_confirmation"
           defaultValue=""
-          label="PasswordConfirmation"
+          label={intl.formatMessage({ id: "passwordConfirmation" })}
           variant="outlined"
           margin="normal"
           control={control}
@@ -166,7 +168,7 @@ const SignUp: React.FC<SignUpProps> = ({ onSuccess }: SignUpProps) => {
           color="primary"
           fullWidth
         >
-          SignUp
+          <FormattedMessage id="signup" />
         </LoadingButton>
       </form>
     </Box>

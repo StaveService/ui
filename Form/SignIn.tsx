@@ -1,5 +1,6 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import React, { useEffect } from "react";
+import { FormattedMessage, useIntl } from "react-intl";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
@@ -30,6 +31,7 @@ export const signIn = (
 const SignIn: React.FC<SignInProps> = ({ onSuccess }: SignInProps) => {
   const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
+  const intl = useIntl();
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const { errors, control, setValue, handleSubmit } = useForm({
     resolver: yupResolver(signInSchema),
@@ -37,7 +39,7 @@ const SignIn: React.FC<SignInProps> = ({ onSuccess }: SignInProps) => {
   const handleSuccess = (res: AxiosResponse<ISignSuccessResponse>) => {
     dispatch(setCurrentUser(res.data.data));
     dispatch(setHeaders(res.headers));
-    enqueueSnackbar("SignIn successful", {
+    enqueueSnackbar(intl.formatMessage({ id: "signinSuccessful" }), {
       variant: "success",
       anchorOrigin: {
         vertical: "bottom",
@@ -71,14 +73,16 @@ const SignIn: React.FC<SignInProps> = ({ onSuccess }: SignInProps) => {
   );
   // TODO: ONLY DEVELOPMENT
   useEffect(() => {
-    setValue("email", "test@test.com");
-    setValue("password", "password");
+    if (process.env.NODE_ENV === "development") {
+      setValue("email", "test@test.com");
+      setValue("password", "password");
+    }
   }, [setValue]);
   const onSubmit = (data: ISignInFormValues) => mutate(data);
   return (
     <Box m={3}>
       <Typography variant="h4" align="center">
-        SignIn
+        <FormattedMessage id="signin" />
       </Typography>
       <form onSubmit={handleSubmit(onSubmit)}>
         <ControlTextField
@@ -86,7 +90,7 @@ const SignIn: React.FC<SignInProps> = ({ onSuccess }: SignInProps) => {
           name="email"
           defaultValue=""
           autoComplete="on"
-          label="Email"
+          label={intl.formatMessage({ id: "email" })}
           variant="outlined"
           margin="normal"
           control={control}
@@ -97,7 +101,7 @@ const SignIn: React.FC<SignInProps> = ({ onSuccess }: SignInProps) => {
         <ControlTextField
           type="password"
           name="password"
-          label="Password"
+          label={intl.formatMessage({ id: "password" })}
           variant="outlined"
           margin="normal"
           control={control}
@@ -112,7 +116,7 @@ const SignIn: React.FC<SignInProps> = ({ onSuccess }: SignInProps) => {
           loading={isLoading}
           fullWidth
         >
-          SignIn
+          <FormattedMessage id="signin" />
         </LoadingButton>
       </form>
     </Box>
